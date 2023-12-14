@@ -8,7 +8,7 @@ class GcpDot {
 
     async _runHeadlessDriver() {
         let high = 0;
-        const delay = 3;
+        // const delay = 3;
 
         console.log(this.driveExecutable);
         const browser = await puppeteer.launch();
@@ -16,13 +16,13 @@ class GcpDot {
         await page.goto('https://gcpdot.com/gcpchart.php', { waitUntil: 'networkidle2' });
 
         try {
-            await page.waitForTimeout(1000); // Equivalent to time.sleep(1)
+            // await page.waitForTimeout(1000); // Equivalent to time.sleep(1)
 
             const chartHeight = await page.$eval('#gcpChartShadow', e => e.getAttribute('height'));
             const dots = await page.$$('div');
             const dot = dots[dots.length - 1];
             const dotId = await dot.evaluate(e => e.getAttribute('id'));
-            await page.waitForTimeout(1000);
+            // await page.waitForTimeout(1000);
 
             let dotHeight = await page.$eval(`#${dotId}`, e => e.style.top);
             dotHeight = dotHeight.replace('px', '');
