@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- <meta http-equiv="refresh" content="100">  Auto refresh every 10 seconds -->
+    <title>Random String Generator</title>
+    <style>
+        body {
+            background-color: #333; /* Dark gray background */
+            color: white; /* White text color */
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding-top: 50px;
+        }
+        .center-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        iframe {
+            margin-bottom: 20px; /* Spacing between iframe and text */
+        }
+        .random-string {
+            word-wrap: break-word; /* Enable word wrapping */
+            max-width: 80%; /* Maximum width of the string container */
+            margin: 0 auto; /* Centering the string container */
+            margin-top: 20px; /* Spacing between input and string */
+        }
+    </style>
+</head>
+<body>
+    <div class="center-content">
+        <iframe src="https://global-mind.org/gcpdot/gcp.html" height="48" width="48" scrolling="no" marginwidth="0" marginheight="0" frameborder="0" ></iframe>
+        <h1>GCP Dot Random String</h1>
+        
+        <form action="/" method="post">
+            <input type="number" name="length" min="1" max="1000" placeholder="Enter string length (default 128 | Min 1| Max 1000)">
+            <input type="submit" value="Generate">
+        </form>
+
+        <!-- Display the error message if it exists -->
+        <% if (error_message) { %>
+            <p style="color: red;"><%= error_message %></p>
+        <% } %>
+
+        <p class="random-string"><%= random_string %></p>
+    </div>
+</body>
+</html>
